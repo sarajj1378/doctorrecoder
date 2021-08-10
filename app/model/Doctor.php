@@ -8,10 +8,10 @@ class Doctor extends Model
 {
     protected $table = 'doctors';
     protected $fillable = [
-        'name', 'medicalcode', 'password','lastname','addresss','gender','nationalnumber','phonenumber','takhasos',
+        'name', 'medicalcode', 'password', 'lastname', 'addresss', 'gender', 'nationalnumber', 'phonenumber', 'takhasos',
         'birthday'
     ];
-
-
-
+    protected $casts = [
+        'birthday' => 'datetime',
+    ];
 }
