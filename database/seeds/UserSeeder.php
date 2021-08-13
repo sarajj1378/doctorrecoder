@@ -14,8 +14,8 @@ class UserSeeder extends Seeder
     {
         DB::table('doctors')->insert([
             'name'=>'Sara ',
-            'medicalcode'=>'4984338943290',
-            'password'=>'123456789',
+            'medicalcode'=>'123456789',
+            'password'=>Hash::make('123456789'),
             'lastname'=>'Jalali',
             'address'=>'rafsanjan',
             'gender'=>true,
