@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
-use App\User;
+use App\Model\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -31,7 +31,7 @@ class AuthController extends Controller
     {
         $credentials = request(['medicalcode', 'password']);
         $user = User::where('medicalcode', $credentials['medicalcode'])->first();
-        
+
         if (!isset($user) || !Hash::check($credentials['password'], $user->password) || ! $token = auth()->login($user)) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }

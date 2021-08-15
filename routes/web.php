@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+use App\Http\Controllers\ReactController;
+
+// Route::get('/','ReactController');
+Route::get('/login', 'ReactController')->name('login');
+Route::any('/{route?}','ReactController')->where('route','(.*)');
