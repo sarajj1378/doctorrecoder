@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Tymon\JWTAuth\Contracts\JWTSubject;
@@ -39,7 +39,7 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $fillable = [
-        'name', 'medicalcode', 'password','lastname','address','gender','nationalcode','phonenumber','takhasos','birthday'
+        'id','name', 'medicalcode', 'password','lastname','address','gender','nationalcode','phonenumber','takhasos','birthday'
     ];
 
     /**
