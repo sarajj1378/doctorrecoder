@@ -12,7 +12,7 @@ class ReactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke($route = '')
+    public function index($route = '')
     {
         return view('index');
     }

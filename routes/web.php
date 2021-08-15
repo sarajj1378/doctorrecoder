@@ -16,7 +16,8 @@
 // });
 
 use App\Http\Controllers\ReactController;
+use Illuminate\Support\Facades\Route;
 
 // Route::get('/','ReactController');
-Route::get('/login', 'ReactController')->name('login');
-Route::any('/{route?}','ReactController')->where('route','(.*)');
+Route::get('/login', [ReactController::class,'index'])->name('login');
+Route::any('/{route?}',[ReactController::class,'index'])->where('route','(.*)');
